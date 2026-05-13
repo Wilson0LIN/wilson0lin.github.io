@@ -101,12 +101,7 @@ I completed a specialized project with my classmates.
 During that process, I learned many things that textbooks couldn't teach.
 In the same year, I also started preparing for an important exam.
 My final score ended up in the PR88 to 92 range.
-Honestly, I wasn't satisfied.
-But I also know that life isn't defined by a single exam.
-So I decided to readjust my health and condition next year and give myself another chance.
-Looking back now, my life isn't really an epic saga.
-I just slowly transformed from a kid running in the fields into someone seeking balance between reality and the digital world.
-I've stumbled and gotten lost. But until now, I'm still moving forward.
+
 And I suppose this is the process of human growth,
 Even without knowing the answer yet, still being willing to keep going.`,
 
@@ -279,13 +274,8 @@ W=F⋅S
 那段過程中，我學到很多課本教不了的事。
 同年，我也開始準備重要考試。
 最後成績落在PR88到92。
-老實說，我並不滿意。
-但我也知道，人生不是一次考試就能定義的。
-所以我決定，在明年重新調整自己的健康與狀態，再給自己一次機會。
-現在回頭看，我的人生其實並不是什麼轟轟烈烈的故事。
-我只是從一個在田野奔跑的小孩，慢慢變成一個在現實與數位世界之間尋找平衡的人。
-我跌倒、迷失過。但直到現在，我依然還在往前走。
-而我想這大概就是人成長的過程，
+
+我想這大概就是人成長的過程，
 即使還不知道答案，也願意繼續前進。`,
 
     resumeHtml: `[ <a href="https://drive.google.com/drive/folders/15CeCyUyakDBjl39IfCphXz3PCbHVTgls?usp=sharing" target="_blank" class="clickable">下載履歷表 (外部)</a> ]\n最後更新: 2026-05-10`,
