@@ -22,7 +22,7 @@ const terminalData = {
     
     skills: `=== SKILLS ===\n- Holder of 3 electrical engineering-related technician certifications issued in Taiwan.\n\n= Also Skills =\n- Master of Ctrl+C / Ctrl+V advanced data integration technologies\n- Capable of unleashing 1000% productivity 10 minutes before a deadline\n- Familiar with cross-platform video content analysis (YouTube / TikTok / Instagram)`,
     
-    fetch: `<img src="Visual IdentityRC8x.svg" alt="Visual identity" style="max-width: 100%; height: auto;" />
+    fetch: `<img src="visual_identity.svg" alt="Visual identity" style="max-width: 100%; height: auto;" />
 
 OS: Retrofit OS x64
 Host: Human Being 1.0
@@ -107,65 +107,53 @@ Even without knowing the answer yet, still being willing to keep going.`,
 
     resumeHtml: `[ <a href="https://drive.google.com/drive/folders/15CeCyUyakDBjl39IfCphXz3PCbHVTgls?usp=sharing" target="_blank" class="clickable">Download Resume (external)</a> ]\nLast updated: 2026-05-10`,
     contactEmailHtml: `Email:
- __      __            ___                                              
-/\\ \\  __/\\ \\    __    /\\_ \\                                             
-\\ \\ \\/\\ \\ \\ \\  /\\_\\   \\//\\ \\      ____    ___     ___                   
- \\ \\ \\ \\ \\ \\ \\ \\/\\ \\    \\ \\ \\    /',__\\  / __\`\\ /' _ \`\\                 
-  \\ \\ \\_/ \\_\\ \\ \\ \\ \\    \\_\\ \\_ /\\__, \`\\/\\ \\O\\ \\/\\ \\/\\ \\   __           
-   \\ \`\\___x___/  \\ \\_\\   /\\____\\\\/\\____/\\ \\____/\\ \\_\\ \\_\\ /\\_\\          
-    '\\/__//__/    \\/_/   \\/____/ \\/___/  \\/___/  \\/_/\\/_/ \\/_/          
- ___                         __       ________   ____       __          
-/\\_ \\      __              /'_ \`\\    /\\_____  \\ /'___\\    /'_ \`\\        
-\\//\\ \\    /\\_\\     ___    /\\ \\9\\ \\   \\/___//'/'/\\ \\__/   /\\ \\9\\ \\       
-  \\ \\ \\   \\/\\ \\  /' _ \`\\  \\ \\___, \\      /' /' \\ \\  _\`\`\\ \\ \\___, \\      
-   \\_\\ \\_  \\ \\ \\ /\\ \\/\\ \\  \\/__,/\\ \\    /' /'   \\ \\ \\6\\ \\ \\/__,/\\ \\     
-   /\\____\\  \\ \\_\\\\ \\_\\ \\_\\      \\ \\_\\  /\\_/      \\ \\____/      \\ \\_\\    
-   \\/____/   \\/_/ \\/_/\\/_/       \\/_/  \\//        \\/___/        \\/_/    
-            ____                                     ___                
-   __      /\\  _\`\\                            __    /\\_ \\               
-  /'_\`\\_   \\ \\ \\G\\_\\    ___ ___       __     /\\_\\   \\//\\ \\              
- /'/'_\` \\   \\ \\ \\G_G  /' __\` __\`\\   /'__\`\\   \\/\\ \\    \\ \\ \\             
-/\\ \\ \\@\\ \\   \\ \\ \\/, \\/\\ \\/\\ \\/\\ \\ /\\ \\L\\.\\_  \\ \\ \\    \\_\\ \\_           
-\\ \\ \`\\__,_\\   \\ \\____/\\ \\_\\ \\_\\ \\_\\\\ \\__/.\\_\\  \\ \\_\\   /\\____\\          
- \\ \`\\_____\\    \\/___/  \\/_/\\/_/\\/_/ \\/__/\\/_/   \\/_/   \\/____/          
-  \`\\/_____/                                                             
-      ___     ___     ___ ___                                           
-     /'___\\  / __\`\\ /' __\` __\`\\                                         
- __ /\\ \\__/ /\\ \\O\\ \\/\\ \\/\\ \\/\\ \\                                        
-/\\_\\\\ \\____\\\\ \\____/\\ \\_\\ \\_\\ \\_\\                                       
-\\/_/ \\/____/ \\/___/  \\/_/\\/_/\\/_/                                        `,
+██╗    ██╗██╗██╗     ███████╗ ██████╗ ███╗   ██╗     
+██║    ██║██║██║     ██╔════╝██╔═══██╗████╗  ██║     
+██║ █╗ ██║██║██║     ███████╗██║   ██║██╔██╗ ██║     
+██║███╗██║██║██║     ╚════██║██║   ██║██║╚██╗██║     
+╚███╔███╔╝██║███████╗███████║╚██████╔╝██║ ╚████║██╗  
+ ╚══╝╚══╝ ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  
+                                                     
+██╗     ██╗███╗   ██╗ █████╗ ███████╗ ██████╗ █████╗ 
+██║     ██║████╗  ██║██╔══██╗╚════██║██╔════╝██╔══██╗
+██║     ██║██╔██╗ ██║╚██████║    ██╔╝███████╗╚██████║
+██║     ██║██║╚██╗██║ ╚═══██║   ██╔╝ ██╔═══██╗╚═══██║
+███████╗██║██║ ╚████║ █████╔╝   ██║  ╚██████╔╝█████╔╝
+╚══════╝╚═╝╚═╝  ╚═══╝ ╚════╝    ╚═╝   ╚═════╝ ╚════╝ 
+                                                     
+ ██████╗  ██████╗ ███╗   ███╗ █████╗ ██╗██╗          
+██╔═══██╗██╔════╝ ████╗ ████║██╔══██╗██║██║          
+██║██╗██║██║  ███╗██╔████╔██║███████║██║██║          
+██║██║██║██║   ██║██║╚██╔╝██║██╔══██║██║██║          
+╚█║████╔╝╚██████╔╝██║ ╚═╝ ██║██║  ██║██║███████╗     
+ ╚╝╚═══╝  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚══════╝     
+                                                     
+    ██████╗ ██████╗ ███╗   ███╗                      
+   ██╔════╝██╔═══██╗████╗ ████║                      
+   ██║     ██║   ██║██╔████╔██║                      
+   ██║     ██║   ██║██║╚██╔╝██║                      
+██╗╚██████╗╚██████╔╝██║ ╚═╝ ██║                      
+╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝                      `,
     contactPhoneHtml: `Phone:
- d8~~\\    d8~~\\    e88~-- 
-C88b  |  C88b  |  d888    
- Y88b/    Y88b/   8888~~\\ 
- /Y88b    /Y88b   8888   |
-|  Y88D  |  Y88D  Y888   |
- \\__8P    \\__8P    "88__/ 
- /~~8e    ,8~~\\     d8~~\\ 
-|   88b  d88   \\   C88b  |
-|   888  888    |   Y88b/ 
- \\__888  888    |   /Y88b 
-    88P  Y88   /   |  Y88D
- ~-_8"    \`8__/     \\__8P 
-    ,d    d8~~\\    e88~-- 
- ,d888   C88b  |  d888    
-   888    Y88b/   8888~~\\ 
-   888    /Y88b   8888   |
-   888   |  Y88D  Y888   |
-   888    \\__8P    "88__/ 
-    ,d   _-~88e    /~~~~~~
- ,d888      888b  /       
-   888    __888"  \`-~~88e 
-   888      888e      888b
-   888      888P  |   888P
-   888   ~-_88"    \\__88"  `,
+     888   888    6        9999  000   888 
+ +  8   8 8   8  6        9   9 0  00 8   8
++++  888   888  6666       9999 0 0 0  888 
+ +  8   8 8   8 6   6        9  00  0 8   8
+     888   888   666        9    000   888 
+                                           
+                                           
+     11   888    6        11  333  5555    
+    111  8   8  6        111     3 5       
+     11   888  6666       11   33  555     
+     11  8   8 6   6      11     3    5    
+    11l1  888   666      11l1 333  555     `,
     connectRestricted: `[Limited access] Showing promotion links only:\n`,
     connectPromoHtml: `<a href="https://saily.onelink.me/ymzx/referrals" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://game.erolabsshare.live/app/74ba11ea/Stardom" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://rewards.bing.com/welcome?rh=24D15EF1&ref=rafsrchae" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://www.google.com.tw/books/edition/Love_Before_the_global_shutdown/e3LMEQAAQBAJ" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a>`,
     connectAllHtml: `<a href="https://www.facebook.com/lin.ting.wei.218793" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://www.instagram.com/wilsonlin9769/" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://www.youtube.com/@WilsonLinYT" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://github.com/Wilson0LIN" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://wilsonlin.itch.io/" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a>\n\n<a href="https://saily.onelink.me/ymzx/referrals" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://game.erolabsshare.live/app/74ba11ea/Stardom" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://rewards.bing.com/welcome?rh=24D15EF1&ref=rafsrchae" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://www.google.com.tw/books/edition/Love_Before_the_global_shutdown/e3LMEQAAQBAJ" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a>`,
     
     langSwitched: "Language switched to English.",
     langErr: "Unsupported language! Try ' -en' or ' -tw'.",
-    clearConfirm: 'Are you sure you want to clear? [<span class="clickable" onclick="runCmd(\'y\')">Y</span>/<span class="clickable" onclick="runCmd(\'n\')">n</span>]',
+    clearConfirm: 'Are you sure you want to clear? [<span class="clickable" onclick="runCmd(\'y\')">y</span>/<span class="clickable" onclick="runCmd(\'n\')">N</span>]',
     clearCancelled: 'Clear cancelled.',
     commandNotFound: 'Command not found: ',
     sudo: 'Nice try! This incident will be reported to Santa Claus.',
@@ -195,7 +183,7 @@ C88b  |  C88b  |  d888
     
     skills: `=== 技能 ===\n- 擁有中華民國核發之 3 張電機相關技術士證照\n\n=趣味技能=\n- 精通 Ctrl+C / Ctrl+V 高階資料整合技術\n- 擅長在 Deadline 前 10 分鐘爆發 1000% 生產力\n- 熟悉跨平台影音內容分析（YouTube / TikTok / Instagram）`,
     
-    fetch: `<img src="Visual IdentityRC8x.svg" alt="Visual identity" style="max-width: 100%; height: auto;" />
+    fetch: `<img src="visual_identity.svg" alt="Visual identity" style="max-width: 100%; height: auto;" />
 
 作業系統: Retrofit OS x64
 宿主: 人類 1.0
@@ -280,65 +268,54 @@ W=F⋅S
 
     resumeHtml: `[ <a href="https://drive.google.com/drive/folders/15CeCyUyakDBjl39IfCphXz3PCbHVTgls?usp=sharing" target="_blank" class="clickable">下載履歷表 (外部)</a> ]\n最後更新: 2026-05-10`,
     contactEmailHtml: `電子郵件:
- __      __            ___                                              
-/\\ \\  __/\\ \\    __    /\\_ \\                                             
-\\ \\ \\/\\ \\ \\ \\  /\\_\\   \\//\\ \\      ____    ___     ___                   
- \\ \\ \\ \\ \\ \\ \\ \\/\\ \\    \\ \\ \\    /',__\\  / __\`\\ /' _ \`\\                 
-  \\ \\ \\_/ \\_\\ \\ \\ \\ \\    \\_\\ \\_ /\\__, \`\\/\\ \\O\\ \\/\\ \\/\\ \\   __           
-   \\ \`\\___x___/  \\ \\_\\   /\\____\\\\/\\____/\\ \\____/\\ \\_\\ \\_\\ /\\_\\          
-    '\\/__//__/    \\/_/   \\/____/ \\/___/  \\/___/  \\/_/\\/_/ \\/_/          
- ___                         __       ________   ____       __          
-/\\_ \\      __              /'_ \`\\    /\\_____  \\ /'___\\    /'_ \`\\        
-\\//\\ \\    /\\_\\     ___    /\\ \\9\\ \\   \\/___//'/'/\\ \\__/   /\\ \\9\\ \\       
-  \\ \\ \\   \\/\\ \\  /' _ \`\\  \\ \\___, \\      /' /' \\ \\  _\`\`\\ \\ \\___, \\      
-   \\_\\ \\_  \\ \\ \\ /\\ \\/\\ \\  \\/__,/\\ \\    /' /'   \\ \\ \\6\\ \\ \\/__,/\\ \\     
-   /\\____\\  \\ \\_\\\\ \\_\\ \\_\\      \\ \\_\\  /\\_/      \\ \\____/      \\ \\_\\    
-   \\/____/   \\/_/ \\/_/\\/_/       \\/_/  \\//        \\/___/        \\/_/    
-            ____                                     ___                
-   __      /\\  _\`\\                            __    /\\_ \\               
-  /'_\`\\_   \\ \\ \\G\\_\\    ___ ___       __     /\\_\\   \\//\\ \\              
- /'/'_\` \\   \\ \\ \\G_G  /' __\` __\`\\   /'__\`\\   \\/\\ \\    \\ \\ \\             
-/\\ \\ \\@\\ \\   \\ \\ \\/, \\/\\ \\/\\ \\/\\ \\ /\\ \\L\\.\\_  \\ \\ \\    \\_\\ \\_           
-\\ \\ \`\\__,_\\   \\ \\____/\\ \\_\\ \\_\\ \\_\\\\ \\__/.\\_\\  \\ \\_\\   /\\____\\          
- \\ \`\\_____\\    \\/___/  \\/_/\\/_/\\/_/ \\/__/\\/_/   \\/_/   \\/____/          
-  \`\\/_____/                                                             
-      ___     ___     ___ ___                                           
-     /'___\\  / __\`\\ /' __\` __\`\\                                         
- __ /\\ \\__/ /\\ \\O\\ \\/\\ \\/\\ \\/\\ \\                                        
-/\\_\\\\ \\____\\\\ \\____/\\ \\_\\ \\_\\ \\_\\                                       
-\\/_/ \\/____/ \\/___/  \\/_/\\/_/\\/_/                                        `,
-    contactPhoneHtml: `電話:
- d8~~\\    d8~~\\    e88~-- 
-C88b  |  C88b  |  d888    
- Y88b/    Y88b/   8888~~\\ 
- /Y88b    /Y88b   8888   |
-|  Y88D  |  Y88D  Y888   |
- \\__8P    \\__8P    "88__/ 
- /~~8e    ,8~~\\     d8~~\\ 
-|   88b  d88   \\   C88b  |
-|   888  888    |   Y88b/ 
- \\__888  888    |   /Y88b 
-    88P  Y88   /   |  Y88D
- ~-_8"    \`8__/     \\__8P 
-    ,d    d8~~\\    e88~-- 
- ,d888   C88b  |  d888    
-   888    Y88b/   8888~~\\ 
-   888    /Y88b   8888   |
-   888   |  Y88D  Y888   |
-   888    \\__8P    "88__/ 
-    ,d   _-~88e    /~~~~~~
- ,d888      888b  /       
-   888    __888"  \`-~~88e 
-   888      888e      888b
-   888      888P  |   888P
-   888   ~-_88"    \\__88"  `,
+██╗    ██╗██╗██╗     ███████╗ ██████╗ ███╗   ██╗     
+██║    ██║██║██║     ██╔════╝██╔═══██╗████╗  ██║     
+██║ █╗ ██║██║██║     ███████╗██║   ██║██╔██╗ ██║     
+██║███╗██║██║██║     ╚════██║██║   ██║██║╚██╗██║     
+╚███╔███╔╝██║███████╗███████║╚██████╔╝██║ ╚████║██╗  
+ ╚══╝╚══╝ ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  
+                             
+██╗     ██╗███╗   ██╗ █████╗ ███████╗ ██████╗ █████╗ 
+██║     ██║████╗  ██║██╔══██╗╚════██║██╔════╝██╔══██╗
+██║     ██║██╔██╗ ██║╚██████║    ██╔╝███████╗╚██████║
+██║     ██║██║╚██╗██║ ╚═══██║   ██╔╝ ██╔═══██╗╚═══██║
+███████╗██║██║ ╚████║ █████╔╝   ██║  ╚██████╔╝█████╔╝
+╚══════╝╚═╝╚═╝  ╚═══╝ ╚════╝    ╚═╝   ╚═════╝ ╚════╝ 
+                                       
+ ██████╗  ██████╗ ███╗   ███╗ █████╗ ██╗██╗          
+██╔═══██╗██╔════╝ ████╗ ████║██╔══██╗██║██║          
+██║██╗██║██║  ███╗██╔████╔██║███████║██║██║          
+██║██║██║██║   ██║██║╚██╔╝██║██╔══██║██║██║          
+╚█║████╔╝╚██████╔╝██║ ╚═╝ ██║██║  ██║██║███████╗     
+ ╚╝╚═══╝  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚══════╝     
+                                       
+    ██████╗ ██████╗ ███╗   ███╗                      
+   ██╔════╝██╔═══██╗████╗ ████║                      
+   ██║     ██║   ██║██╔████╔██║                      
+   ██║     ██║   ██║██║╚██╔╝██║                      
+██╗╚██████╗╚██████╔╝██║ ╚═╝ ██║                      
+╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝                      `,
+    contactPhoneHtml: `聯絡電話:
+
+     888   888    6        9999  000   888 
+ +  8   8 8   8  6        9   9 0  00 8   8
++++  888   888  6666       9999 0 0 0  888 
+ +  8   8 8   8 6   6        9  00  0 8   8
+     888   888   666        9    000   888 
+                                           
+                                           
+     11   888    6        11  333  5555    
+    111  8   8  6        111     3 5       
+     11   888  6666       11   33  555     
+     11  8   8 6   6      11     3    5    
+    11l1  888   666      11l1 333  555     `,
     connectRestricted: `[存取權受限] 僅顯示推廣連結：\n`,
     connectPromoHtml: `<a href="https://saily.onelink.me/ymzx/referrals" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://game.erolabsshare.live/app/74ba11ea/Stardom" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://rewards.bing.com/welcome?rh=24D15EF1&ref=rafsrchae" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://www.google.com.tw/books/edition/Love_Before_the_global_shutdown/e3LMEQAAQBAJ" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a>`,
     connectAllHtml: `<a href="https://www.facebook.com/lin.ting.wei.218793" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://www.instagram.com/wilsonlin9769/" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://www.youtube.com/@WilsonLinYT" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://github.com/Wilson0LIN" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://wilsonlin.itch.io/" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a>\n\n<a href="https://saily.onelink.me/ymzx/referrals" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://game.erolabsshare.live/app/74ba11ea/Stardom" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://rewards.bing.com/welcome?rh=24D15EF1&ref=rafsrchae" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a> &nbsp;&nbsp; <a href="https://www.google.com.tw/books/edition/Love_Before_the_global_shutdown/e3LMEQAAQBAJ" target="_blank" style="text-decoration:none; color:inherit;" class="clickable" title="Discover">Ç</a>`,
     
     langSwitched: "語言已切換為 [繁體中文]。",
     langErr: "不支援的語言！請試試 '-en' 或 '-tw'。",
-    clearConfirm: '您確定要清除畫面嗎？ [<span class="clickable" onclick="runCmd(\'y\')">Y</span>/<span class="clickable" onclick="runCmd(\'n\')">n</span>]',
+    clearConfirm: '您確定要清除畫面嗎？ [<span class="clickable" onclick="runCmd(\'y\')">y</span>/<span class="clickable" onclick="runCmd(\'n\')">N</span>]',
     clearCancelled: '已取消。',
     commandNotFound: '找不到指令: ',
     sudo: '想幹嘛！這起事件將會匯報給聖誕老人 (你拿不到禮物了)。',
