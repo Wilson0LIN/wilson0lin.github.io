@@ -2,418 +2,133 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>About Wilson LIN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wilson LIN's personal space.">
+  <meta name="theme-color" content="#f5f5f2">
+  <title>Wilson LIN</title>
   <style>
     :root {
-      --bg-1: #040508;
-      --bg-2: #101223;
-      --panel: rgba(13, 15, 28, 0.85);
-      --panel-border: rgba(105, 120, 255, 0.3);
-      --text: #e8eaed;
-      --muted: rgba(232, 234, 237, 0.6);
-      --accent: #d2a8ff;
-      --prompt: #669df6;
-      --error: #f28b82;
-      --shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
-      --glow-1: rgba(102, 157, 246, 0.15);
-      --glow-2: rgba(210, 168, 255, 0.15);
+      color-scheme: light;
+      --bg: #eef5f3;
+      --surface: rgba(255, 255, 255, 0.72);
+      --ink: #151817;
+      --muted: #747a75;
+      --line: rgba(21, 24, 23, 0.15);
+      --accent: #70b7aa;
+      --accent-ink: #102c2b;
+      --blue: #23656b;
+      --shadow: 0 20px 60px rgba(21, 24, 23, 0.1);
+      --display: Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      min-height: 100%;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      overflow: hidden;
-      color: var(--text);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-      font-weight: bold;
-      letter-spacing: 0.1em;
-      background:
-        radial-gradient(circle at top left, var(--glow-1), transparent 40%),
-        radial-gradient(circle at bottom right, var(--glow-2), transparent 40%),
-        linear-gradient(135deg, var(--bg-1), var(--bg-2));
-    }
-
-    .terminal {
-      width: min(100%, 1000px);
-      height: min(95vh, 920px);
-      display: flex;
-      flex-direction: column;
-      border: 1px solid rgba(210, 168, 255, 0.4);
-      border-radius: 18px;
-      overflow: hidden;
-      background: var(--panel);
-      box-shadow: 
-        var(--shadow), 
-        0 0 15px rgba(102, 157, 246, 0.2), 
-        inset 0 0 20px rgba(210, 168, 255, 0.15);
-      backdrop-filter: blur(10px);
-      transition: box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-
-    .terminal:hover {
-      box-shadow: 
-        var(--shadow), 
-        0 0 25px rgba(102, 157, 246, 0.3), 
-        inset 0 0 30px rgba(210, 168, 255, 0.2);
-      border-color: rgba(210, 168, 255, 0.6);
-    }
-
-    .title-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 12px 16px;
-      color: var(--muted);
-      background: rgba(255, 255, 255, 0.03);
-      border-bottom: 1px solid var(--panel-border);
-    }
-
-    .window-title {
-      min-width: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .window-controls {
-      display: flex;
-      gap: 8px;
-      flex: none;
-    }
-
-    .control {
-      width: 12px;
-      height: 12px;
-      border-radius: 999px;
-    }
-
-    .control.red { background: #ff5f57; }
-    .control.yellow { background: #febc2e; }
-    .control.green { background: #28c840; }
-
-    .output {
-      flex: 1;
-      padding: 24px;
-      overflow: auto;
-      white-space: pre-wrap;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-      line-height: 1.7;
-      font-size: 1rem;
-      scrollbar-width: none;
-    }
-
-    .output::-webkit-scrollbar {
-      display: none;
-    }
-
-    .line {
-      margin-bottom: 0.35rem;
-    }
-
-    .prompt-line {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      min-width: 0;
-      flex-wrap: wrap;
-      overflow: hidden;
-    }
-
-    .prompt {
-      color: var(--prompt);
-      user-select: none;
-      flex: none;
-    }
-
-    .command-input {
-      min-width: 0;
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: var(--accent);
-      font-family: inherit;
-      font-size: inherit;
-      font-weight: bold;
-      letter-spacing: inherit;
-      caret-color: var(--accent);
-      padding: 0;
-      margin: 0;
-      appearance: none;
-      -webkit-appearance: none;
-      min-width: 12ch;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-
-    .command-input::placeholder {
-      color: rgba(215, 251, 230, 0.35);
-      opacity: 1;
-    }
-
-    .command-output {
-      color: var(--accent);
-      white-space: pre-wrap;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-      max-width: calc(100% - 6ch);
-      display: inline-block;
-    }
-
-    .error {
-      color: var(--error);
-    }
-
-    .clickable {
-      color: var(--prompt);
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .clickable:hover {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
-    @media (max-width: 640px) {
-      body {
-        padding: 8px;
-      }
-
-      .terminal {
-        width: 100%;
-        height: calc(100vh - 16px);
-        border-radius: 14px;
-      }
-
-      .title-bar {
-        padding: 10px 12px;
-      }
-
-      .output {
-        padding: 16px;
-        font-size: 0.95rem;
-      }
-
-      .command-input {
-        min-width: 8ch;
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #102526;
+        --surface: rgba(31, 36, 34, 0.8);
+        --ink: #f2f4ed;
+        --muted: #a4aaa3;
+        --line: rgba(242, 244, 237, 0.18);
+        --accent: #5da99e;
+        --accent-ink: #102526;
+        --blue: #8ac8c2;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
       }
     }
+
+    :root[data-theme="light"] { color-scheme: light; --bg: #eef5f3; --surface: rgba(255, 255, 255, 0.72); --ink: #151817; --muted: #647572; --line: rgba(21, 24, 23, 0.15); --blue: #23656b; --shadow: 0 20px 60px rgba(21, 24, 23, 0.1); }
+    :root[data-theme="dark"] { color-scheme: dark; --bg: #102526; --surface: rgba(24, 45, 45, 0.8); --ink: #eff7f3; --muted: #a5bcb7; --line: rgba(239, 247, 243, 0.18); --blue: #8ac8c2; --shadow: 0 20px 60px rgba(0, 0, 0, 0.25); }
+
+    * { box-sizing: border-box; }
+    html { min-height: 100%; }
+    body { min-height: 100vh; margin: 0; overflow-x: hidden; color: var(--ink); background: var(--bg); font-family: var(--sans); -webkit-font-smoothing: antialiased; transition: color 220ms ease, background 220ms ease; }
+    body::before { position: fixed; inset: 0; z-index: -2; pointer-events: none; content: ""; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 42px 42px; opacity: .2; mask-image: linear-gradient(to bottom, black, transparent 72%); }
+    body::after { position: fixed; top: -18rem; right: -12rem; z-index: -1; width: 40rem; height: 40rem; border: 1px solid var(--line); border-radius: 50%; content: ""; box-shadow: 0 0 0 5rem rgba(52, 95, 112, .04), 0 0 0 10rem rgba(52, 95, 112, .025); }
+    a { color: inherit; }
+
+    .site-header, main { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .site-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+    .wordmark { display: inline-flex; align-items: center; gap: 10px; font-size: .76rem; font-weight: 700; letter-spacing: .13em; text-decoration: none; text-transform: uppercase; }
+    .wordmark-mark { width: 52px; height: 52px; object-fit: contain; border: 0; border-radius: 0; }
+    .theme-control { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); box-shadow: var(--shadow); }
+    .theme-button { border: 0; border-radius: 999px; padding: 7px 11px; color: var(--muted); background: transparent; cursor: pointer; font: 600 .68rem var(--sans); letter-spacing: .04em; }
+    .theme-button[aria-pressed="true"] { color: var(--accent-ink); background: var(--accent); }
+    .theme-button:focus-visible, .link-item:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .62fr); gap: clamp(48px, 10vw, 150px); align-items: center; min-height: calc(100vh - 90px); padding: clamp(55px, 10vh, 120px) 0 90px; }
+    h1 { max-width: 700px; margin: 0; font-family: var(--display); font-size: clamp(4.3rem, 10vw, 9.4rem); font-weight: 400; letter-spacing: 0; line-height: .9; }
+    .tagline { max-width: 360px; margin: 28px 0 0; color: var(--muted); font-family: "PingFang TC", "Noto Sans TC", var(--sans); font-size: clamp(1rem, 1.5vw, 1.2rem); letter-spacing: .04em; line-height: 1.7; }
+    .hero-note { padding: 30px 0 30px 34px; border-left: 1px solid var(--line); }
+    .hero-note p { max-width: 310px; margin: 0; font-family: var(--display); font-size: clamp(1.8rem, 3.2vw, 3rem); letter-spacing: 0; line-height: 1.12; }
+    .hero-note em { color: var(--blue); }
+
+    .links-section { padding-bottom: 72px; }
+    .link-list { border-top: 1px solid var(--line); }
+    .link-item { display: grid; grid-template-columns: 1fr 42px; gap: 18px; align-items: center; min-height: 92px; border-bottom: 1px solid var(--line); text-decoration: none; transition: padding 220ms ease, background 220ms ease; }
+    .link-item:hover { padding: 0 20px; background: var(--surface); }
+    .link-name { font-family: var(--display); font-size: clamp(1.8rem, 3.2vw, 2.7rem); letter-spacing: 0; }
+    .link-arrow { display: grid; width: 38px; height: 38px; place-items: center; color: var(--muted); font-family: var(--sans); font-size: 1.35rem; font-weight: 400; line-height: 1; transition: color 180ms ease, transform 180ms ease; }
+    .link-item:hover .link-arrow { color: var(--blue); font-size: 1.7rem; font-weight: 700; transform: translate(4px, -4px); }
+    .reveal { animation: reveal 800ms both cubic-bezier(.22, .8, .3, 1); }
+    .delay { animation-delay: 140ms; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 720px) {
+      .site-header, main { width: min(100% - 36px, 560px); }
+      .site-header { padding-top: 20px; }
+      .hero { display: block; min-height: auto; padding: 70px 0 80px; }
+      h1 { font-size: clamp(4.2rem, 20vw, 7rem); }
+      .hero-note { margin-top: 72px; padding-left: 22px; }
+      .link-item { grid-template-columns: 1fr 38px; gap: 10px; min-height: 82px; }
+      .link-item:hover { padding: 0 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
   </style>
 </head>
 <body>
-
-  <div class="terminal">
-    <div class="title-bar">
-      <div class="window-title">root@wilsonlin9769:/profile/portfolio</div>
-      <div class="window-controls" aria-hidden="true">
-        <div class="control green"></div>
-        <div class="control yellow"></div>
-        <div class="control red"></div>
-      </div>
+  <header class="site-header reveal">
+    <a class="wordmark" href="./" aria-label="Wilson LIN home"><img class="wordmark-mark" src="./visual_identity.svg" alt="Wilson LIN visual identity"><span>Bonjour!</span></a>
+    <div class="theme-control" aria-label="Color theme">
+      <button class="theme-button" type="button" data-theme-choice="system" aria-pressed="true">Auto</button>
+      <button class="theme-button" type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+      <button class="theme-button" type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
     </div>
-    <div id="output" class="output"></div>
-  </div>
+  </header>
 
-  <script src="data.js"></script>
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="reveal delay">
+        <h1 id="page-title">Wilson<br>LIN.</h1>
+        <p class="tagline">很高興認識你，一起寫下未來的故事吧！</p>
+      </div>
+      <div class="hero-note reveal delay">
+        <p>Ideas, experiments, and <em>unexpected moments.</em></p>
+      </div>
+    </section>
+
+    <section class="links-section reveal delay" aria-label="Main links">
+      <nav class="link-list">
+        <a class="link-item" href="https://line.me/ti/p/BDh11L0Dnd" target="_blank" rel="noopener noreferrer"><span class="link-name">LINE</span><span class="link-arrow" aria-hidden="true">↗</span></a>
+        <a class="link-item" href="https://www.instagram.com/wilsonlin9769" target="_blank" rel="noopener noreferrer"><span class="link-name">Instagram</span><span class="link-arrow" aria-hidden="true">↗</span></a>
+        <a class="link-item" href="./terminal/"><span class="link-name">Terminal</span><span class="link-arrow" aria-hidden="true">↗</span></a>
+      </nav>
+    </section>
+  </main>
+
   <script>
-    const output = document.getElementById('output');
-    const promptText = 'root@wilsonlin9769:/profile/portfolio';
+    const root = document.documentElement;
+    const themeButtons = document.querySelectorAll('[data-theme-choice]');
+    const savedTheme = localStorage.getItem('wilson-theme') || 'system';
 
-    let currentInput = null;
-    let currentPromptLine = null;
-    let awaitingClearConfirm = false;
-
-    // Detect browser language and set default
-    const userLang = navigator.language || navigator.userLanguage;
-    if (userLang && userLang.toLowerCase().includes('zh')) {
-      terminalData.currentLang = 'tw';
-    } else {
-      terminalData.currentLang = 'en';
+    function setTheme(theme) {
+      if (theme === 'system') root.removeAttribute('data-theme');
+      else root.dataset.theme = theme;
+      themeButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme)));
+      localStorage.setItem('wilson-theme', theme);
     }
 
-    // Helper to get current locale data
-    function t() {
-      return terminalData[terminalData.currentLang];
-    }
-
-    function appendLine(text, className = '', isHtml = false) {
-      const line = document.createElement('div');
-      line.className = className ? `line ${className}` : 'line';
-      if (isHtml) {
-        line.innerHTML = text;
-      } else {
-        line.textContent = text;
-      }
-      output.appendChild(line);
-      output.scrollTop = output.scrollHeight;
-    }
-
-    function runCmd(cmd) {
-      if (currentInput && currentPromptLine) {
-        // Find the visible input field and execute
-        executeCommand(cmd, currentPromptLine, currentInput);
-      }
-    }
-
-    function createPrompt() {
-      const promptLine = document.createElement('div');
-      promptLine.className = 'prompt-line';
-
-      const promptLabel = document.createElement('span');
-      promptLabel.className = 'prompt';
-      promptLabel.textContent = 'root@wilsonlin9769:~$';
-
-      const input = document.createElement('input');
-      input.className = 'command-input';
-      input.type = 'text';
-      input.placeholder = 'Type a command...';
-      input.setAttribute('aria-label', 'Terminal command input');
-
-      promptLine.append(promptLabel, input);
-
-      input.addEventListener('keydown', (e) => {
-        if (e.key !== 'Enter') return;
-        e.preventDefault();
-
-        executeCommand(input.value.trim(), promptLine, input);
-      });
-
-      output.appendChild(promptLine);
-      output.scrollTop = output.scrollHeight;
-      input.focus();
-
-      currentInput = input;
-      currentPromptLine = promptLine;
-    }
-
-    function executeCommand(cmd, promptLine, input) {
-      // Build a history line containing the prompt label and the entered command
-      const historyLine = document.createElement('div');
-      historyLine.className = 'line';
-
-      const histPrompt = document.createElement('span');
-      histPrompt.className = 'prompt';
-      histPrompt.textContent = 'root@wilsonlin9769:~$ ';
-
-      const histCommand = document.createElement('span');
-      histCommand.className = 'command-output';
-      histCommand.textContent = cmd || '';
-
-      historyLine.append(histPrompt, histCommand);
-      promptLine.replaceWith(historyLine);
-
-      if (!cmd) {
-        if (awaitingClearConfirm) {
-          awaitingClearConfirm = false;
-          appendLine(t().clearCancelled);
-          createPrompt();
-          return;
-        }
-        createPrompt();
-        return;
-      }
-
-      const rawCmdArgs = cmd.split(' ');
-      const mainCmd = rawCmdArgs[0].toLowerCase();
-      const arg = rawCmdArgs.length > 1 ? rawCmdArgs[1].toLowerCase() : null;
-
-      if (awaitingClearConfirm) {
-        awaitingClearConfirm = false;
-        if (mainCmd === 'y' || mainCmd === 'yes') {
-          output.innerHTML = '';
-        } else {
-          appendLine(t().clearCancelled);
-        }
-        createPrompt();
-        return;
-      }
-
-      switch (mainCmd) {
-        case 'help':
-          appendLine(t().help, '', true);
-          break;
-        case 'lang':
-          if (arg === '-en' || (!arg && terminalData.currentLang === 'tw')) {
-            terminalData.currentLang = 'en';
-            appendLine(t().langSwitched);
-          } else if (arg === '-tw' || (!arg && terminalData.currentLang === 'en')) {
-            terminalData.currentLang = 'tw';
-            appendLine(t().langSwitched);
-          } else {
-            appendLine(t().langErr, 'error');
-          }
-          break;
-        case 'about':
-          appendLine(t().about);
-          break;
-        case 'story':
-          appendLine(t().story);
-          break;
-        case 'skills':
-          appendLine(t().skills);
-          break;
-        case 'contact':
-          appendLine(t().contactEmailHtml, '', true);
-          break;
-        case 'projects':
-          appendLine(t().projects);
-          break;
-        case 'connect':
-          appendLine(t().connectRestricted + t().connectPromoHtml, '', true);
-          break;
-        case 'resume':
-          appendLine(t().resumeHtml, '', true);
-          break;
-        case 'fetch':
-          appendLine(t().fetch, '', true);
-          break;
-        case 'whoami':
-          appendLine('Wilson LIN - digital craftsman & terminal enthusiast');
-          break;
-        case 'clear':
-          awaitingClearConfirm = true;
-          appendLine(t().clearConfirm, '', true);
-          break;
-        case 'sudo':
-          if (arg === 'connect') {
-            appendLine(t().connectAllHtml, '', true);
-          } else if (arg === 'contact' || arg === 'contacts') {
-            appendLine(t().contactEmailHtml + '\n\n' + t().contactPhoneHtml, '', true);
-          } else {
-            appendLine(t().sudo, 'error');
-          }
-          break;
-        default:
-          appendLine(t().commandNotFound + cmd, 'error');
-      }
-
-      createPrompt();
-    }
-
-    function boot() {
-      output.innerHTML = '';
-      appendLine(t().initMsg1);
-      appendLine(t().initMsg2);
-      appendLine(t().initMsg3, '', true);
-      createPrompt();
-    }
-
-    window.onload = boot;
+    themeButtons.forEach((button) => button.addEventListener('click', () => setTheme(button.dataset.themeChoice)));
+    setTheme(savedTheme);
   </script>
 </body>
 </html>
