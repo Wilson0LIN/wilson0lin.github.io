@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wilson LIN's personal space.">
+  <meta name="theme-color" content="#f0f1ed">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <title>Wilson LIN</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f0f1ed;
+      --bg-end: #dfe9e5;
+      --surface: rgba(255, 255, 255, 0.64);
+      --ink: #151817;
+      --muted: #747a75;
+      --wordmark: #e3e7e2;
+      --theme-control: #9ca9a4;
+      --line: rgba(21, 24, 23, 0.15);
+      --accent: #70b7aa;
+      --accent-ink: #102c2b;
+      --blue: #23656b;
+      --shadow: 0 20px 60px rgba(21, 24, 23, 0.1);
+      --display: Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #202223;
+        --bg-end: #323232;
+        --surface: rgba(50, 50, 50, 0.72);
+        --ink: #f2f4ed;
+        --muted: #a4aaa3;
+        --wordmark: #292b2b;
+        --theme-control: #7f8b87;
+        --line: rgba(242, 244, 237, 0.18);
+        --accent: #5da99e;
+        --accent-ink: #102526;
+        --blue: #8ac8c2;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    :root[data-theme="light"] { color-scheme: light; --bg: #f0f1ed; --bg-end: #dfe9e5; --surface: rgba(255, 255, 255, 0.64); --ink: #151817; --muted: #647572; --wordmark: #e3e7e2; --theme-control: #9ca9a4; --line: rgba(21, 24, 23, 0.15); --blue: #23656b; --shadow: 0 20px 60px rgba(21, 24, 23, 0.1); }
+    :root[data-theme="dark"] { color-scheme: dark; --bg: #202223; --bg-end: #323232; --surface: rgba(50, 50, 50, 0.72); --ink: #eff7f3; --muted: #b8bfbb; --wordmark: #292b2b; --theme-control: #7f8b87; --line: rgba(239, 247, 243, 0.18); --blue: #8ac8c2; --shadow: 0 20px 60px rgba(0, 0, 0, 0.25); }
+
+    * { box-sizing: border-box; }
+    html { min-height: 100%; }
+    body { min-height: 100vh; min-height: 100svh; margin: 0; overflow-x: hidden; color: var(--ink); background: linear-gradient(135deg, var(--bg) 0%, var(--bg-end) 100%); font-family: var(--sans); -webkit-font-smoothing: antialiased; transition: color 220ms ease, background 220ms ease; }
+    a { color: inherit; }
+
+    .site-header, main { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .site-header { display: flex; align-items: center; justify-content: space-between; padding: max(20px, env(safe-area-inset-top)) 0 20px; }
+    .wordmark { display: inline-flex; align-items: center; gap: 10px; color: var(--wordmark); font-size: .76rem; font-weight: 700; letter-spacing: .13em; text-decoration: none; text-transform: uppercase; }
+    .wordmark-mark { width: 50px; height: 50px; object-fit: contain; border: 0; border-radius: 0; }
+    .theme-control { display: inline-flex; }
+    .theme-button { display: grid; width: 50px; height: 50px; place-items: center; border: 0; border-radius: 999px; color: var(--theme-control); background: transparent; cursor: pointer; transition: color 180ms ease, opacity 180ms ease; }
+    .theme-button:hover { color: var(--ink); }
+    .theme-button:focus-visible, .social-link:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+    .theme-icon { display: none; width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+    .theme-button[data-theme-choice="light"] .theme-icon[data-icon="light"],
+    .theme-button[data-theme-choice="dark"] .theme-icon[data-icon="dark"] { display: block; }
+
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .62fr); gap: clamp(64px, 10vw, 150px); align-items: center; min-height: calc(100vh - 90px); min-height: calc(100svh - 90px); padding: clamp(55px, 10vh, 120px) 0 max(90px, env(safe-area-inset-bottom)); }
+    h1 { max-width: 700px; margin: 0; font-family: var(--display); font-size: clamp(4.3rem, 10vw, 9.4rem); font-weight: 400; letter-spacing: 0; line-height: .9; }
+    .tagline { max-width: 360px; margin: 28px 0 0; color: var(--muted); font-family: "PingFang TC", "Noto Sans TC", var(--sans); font-size: clamp(1rem, 1.5vw, 1.2rem); letter-spacing: .04em; line-height: 1.7; }
+    .social-links { display: flex; gap: 16px; margin-top: 30px; }
+    .social-link { display: grid; width: 50px; height: 50px; place-items: center; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); transition: background 180ms ease, transform 180ms ease; }
+    .social-link:hover { background: var(--accent); transform: translateY(-3px); }
+    .social-link img { width: 28px; height: 28px; object-fit: contain; }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .social-link img { filter: invert(1); } }
+    :root[data-theme="dark"] .social-link img { filter: invert(1); }
+    .hero-note { padding: 30px 0 30px 34px; border-left: 1px solid var(--line); }
+    .hero-note p { max-width: 310px; margin: 0; font-family: var(--display); font-size: clamp(1.8rem, 3.2vw, 3rem); letter-spacing: 0; line-height: 1.12; }
+    .hero-note em { color: var(--blue); }
+
+    .reveal { animation: reveal 800ms both cubic-bezier(.22, .8, .3, 1); }
+    .delay { animation-delay: 140ms; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 720px) {
+      .site-header, main { width: min(100% - 36px, 560px); }
+      .site-header { padding-top: 20px; }
+      .hero { display: block; min-height: auto; padding: 40px 0 max(48px, env(safe-area-inset-bottom)); }
+      h1 { font-size: clamp(4.2rem, 20vw, 7rem); }
+      .hero-note { margin-top: 64px; padding-left: 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+    @media (forced-colors: active) {
+      .social-link, .theme-button { border: 1px solid CanvasText; }
+      .hero-note { border-color: CanvasText; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header reveal">
+    <a class="wordmark" href="./" aria-label="Wilson LIN home"><img class="wordmark-mark" src="./assets/visual_identity.svg" alt="Wilson LIN visual identity"><span>Bonjour!</span></a>
+    <div class="theme-control">
+      <button class="theme-button" type="button" data-theme-choice="light" aria-label="Switch to dark theme" title="Switch to dark theme">
+        <svg class="theme-icon" data-icon="light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path></svg>
+        <svg class="theme-icon" data-icon="dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="reveal delay">
+        <h1 id="page-title">Wilson<br>LIN.</h1>
+        <p class="tagline">很高興認識你，一起寫下未來的故事吧！</p>
+        <nav class="social-links" aria-label="Social links">
+          <a class="social-link" href="./terminal/" aria-label="Open playground"><img src="./assets/Swift_Black.svg" alt="" width="28" height="28" decoding="async"></a>
+          <a class="social-link" href="https://line.me/ti/p/BDh11L0Dnd" target="_blank" rel="noopener noreferrer" aria-label="Open LINE profile in a new tab"><img src="./assets/LINE_Black.svg" alt="" width="28" height="28" decoding="async"></a>
+          <a class="social-link" href="https://www.instagram.com/wilsonlin9769" target="_blank" rel="noopener noreferrer" aria-label="Open Instagram profile in a new tab"><img src="./assets/Instagram_Black.svg" alt="" width="28" height="28" decoding="async"></a>
+        </nav>
+      </div>
+      <div class="hero-note reveal delay">
+        <p>Ideas, experiments, and <em>unexpected moments.</em></p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const root = document.documentElement;
+    const themeButton = document.querySelector('[data-theme-choice]');
+    const themeChoices = ['light', 'dark'];
+    const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const systemTheme = () => colorScheme.matches ? 'dark' : 'light';
+    let savedTheme = null;
+    try {
+      savedTheme = localStorage.getItem('wilson-theme');
+    } catch (error) {
+      // Storage can be unavailable in private or restricted browsing contexts.
+    }
+    const themeLabels = {
+      light: 'light',
+      dark: 'dark'
+    };
+
+    function setTheme(theme) {
+      if (!themeChoices.includes(theme)) theme = systemTheme();
+      root.dataset.theme = theme;
+      themeButton.dataset.themeChoice = theme;
+      const nextTheme = themeChoices[(themeChoices.indexOf(theme) + 1) % themeChoices.length];
+      themeButton.setAttribute('aria-label', `Switch to ${themeLabels[nextTheme]} theme`);
+      themeButton.setAttribute('title', `Switch to ${themeLabels[nextTheme]} theme`);
+      try {
+        localStorage.setItem('wilson-theme', theme);
+      } catch (error) {
+        // The selected theme still applies for this page view.
+      }
+    }
+
+    themeButton.addEventListener('click', () => {
+      const currentIndex = themeChoices.indexOf(themeButton.dataset.themeChoice);
+      setTheme(themeChoices[(currentIndex + 1) % themeChoices.length]);
+    });
+    setTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : systemTheme());
+    colorScheme.addEventListener?.('change', (event) => {
+      let hasSavedTheme = false;
+      try {
+        hasSavedTheme = Boolean(localStorage.getItem('wilson-theme'));
+      } catch (error) {
+        hasSavedTheme = false;
+      }
+      if (!hasSavedTheme) setTheme(event.matches ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

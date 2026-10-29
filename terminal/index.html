@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A random color and number experiment.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <title>Playground</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f0f0f0;
+      --contrast: #111111;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      display: grid;
+      min-height: 100vh;
+      margin: 0;
+      place-items: center;
+      color: var(--contrast);
+      background: var(--background);
+      font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+      transition: color 400ms ease, background-color 400ms ease;
+      user-select: none;
+    }
+    main {
+      display: grid;
+      width: 100%;
+      min-height: 100vh;
+      place-items: center;
+      text-align: center;
+      cursor: pointer;
+    }
+    .number {
+      max-width: 100%;
+      margin: 0;
+      padding: 0 4vw;
+      font-size: min(46vw, 72vh, 32rem);
+      font-weight: 700;
+      letter-spacing: .00em;
+      line-height: 1.0;
+    }
+  </style>
+</head>
+<body>
+  <main id="playground">
+    <p class="number" id="random-number" aria-live="polite"></p>
+  </main>
+
+  <script>
+    const root = document.documentElement;
+    const playground = document.querySelector('#playground');
+    const numberElement = document.querySelector('#random-number');
+
+    function randomInteger(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function getComplementaryColor(red, green, blue) {
+      return `rgb(${255 - red} ${255 - green} ${255 - blue})`;
+    }
+
+    function randomize() {
+      const red = randomInteger(0, 255);
+      const green = randomInteger(0, 255);
+      const blue = randomInteger(0, 255);
+      const background = `rgb(${red} ${green} ${blue})`;
+
+      root.style.setProperty('--background', background);
+      root.style.setProperty('--contrast', getComplementaryColor(red, green, blue));
+      numberElement.textContent = randomInteger(1, 100);
+    }
+
+    playground.addEventListener('click', randomize);
+    randomize();
+  </script>
+</body>
+</html>
